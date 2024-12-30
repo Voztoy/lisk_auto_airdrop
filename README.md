@@ -10,8 +10,8 @@ Cài Node js
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/voztoy/edu_auto_transfer.git
-   cd edu_auto_transfer
+   git clone https://github.com/voztoy/lisk_auto_airdrop.git
+   cd lisk_auto_airdrop
    ```
 
 2. Install the necessary packages:
@@ -37,6 +37,7 @@ Cài Node js
 + Cần ước lượng số USDT, LISK cần supply và số USDC cần repay trong tuần để approve hạn mức chi tiêu (nếu không thì giao dịch lỗi)
 
 3.1 Approve hạn mức chi tiêu:
+
 - Copy các file trong approve ra file chính. File data.xlsx chỉ chưa privatekey ở cột A (1 lần)
 
 -  Hạn mức chi tiêu 50 USDT LISK USDC đặt sẵn ở sheet2. Muốn approve cái gì thì copy vào sheet1, copy 1 loại, 1 lần vào ô B2 và C2 tương ứng
@@ -48,6 +49,7 @@ Cài Node js
    ```
 
 3.2 Supply all để có tiền đi vay:
+
 - Copy các file trong supllyall ra file chính. File data.xlsx chỉ chưa privatekey ở cột A (1 lần)
 
 - Thực hiện 2 lệnh sau để supply hết USDT và LISK
@@ -57,13 +59,14 @@ Cài Node js
    node supplyallusdt.js
    ```
 
-3.3 Thực hiện kiểm tra tổng số dư USDT và LISK bằng lệnh sau:
+- Thực hiện kiểm tra tổng số dư USDT và LISK bằng lệnh sau:
 
    ```bash
    node balanceall.js
    ```
 
-3.4 Borrow:
+3.3 Borrow:
+
 - Copy các file trong borrow ra file chính. Căn cứ vào số dư để căn lệnh borow usdc, số usdc tối thiểu là 0.132 USDC, tối đa là bằng 1/2 số dư ổng số dư USDT và LISK. 
 
 - Node đã cài sẵn random vay từ 0,13450-0,13850, nhân lên sẽ căn được bao nhiêu tx. 
@@ -78,14 +81,17 @@ Cài Node js
    node borrow.js
    ```
 
-3.5 Repay USDC:
-Copy các file trong repay ra file chính. File data.xlsx chỉ chưa privatekey ở cột A (1 lần)
-Chạy node này để repay hết USDC
+3.4 Repay USDC:
+
+- Copy các file trong repay ra file chính. File data.xlsx chỉ chưa privatekey ở cột A (1 lần)
+
+- Chạy node này để repay hết USDC
 
    ```bash
   node repayall.js
    ```
-3.6 Supply spam 70 tx/day:
+3.5 Supply spam 70 tx/day:
+
 - Copy các file trong supply70tx ra file chính. 
 
 - Trong file data.xlsx, copy paste key ở cột A 70 lần (mỗi dòng là 1 tx), 10 ví 700 dòng, 20 ví 1400 dòng....
@@ -95,7 +101,7 @@ Chạy node này để repay hết USDC
    ```bash
    node supply70tx.js
    ```
-3.7 Withdraw all USDT và LISK:
+3.6 Withdraw all USDT và LISK:
 
 - Copy các file trong withdraw ra file chính.File data.xlsx chỉ chưa privatekey ở cột A (1 lần)
 
